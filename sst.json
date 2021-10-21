@@ -1,0 +1,6 @@
+{
+  "name": "oso-investigation",
+  "stage": "dev",
+  "region": "us-east-2",
+  "lint": false
+}

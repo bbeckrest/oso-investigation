@@ -1,0 +1,40 @@
+{
+  "name": "oso-investigration",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint && sst test",
+    "start": "npm run lint && sst start",
+    "build": "sst build",
+    "deploy": "sst deploy",
+    "remove": "sst remove",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.114.0",
+    "@babel/eslint-parser": "^7.15.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "prettier": "2.4.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-ec2": "1.114.0",
+    "@aws-cdk/aws-rds": "1.114.0",
+    "@aws-cdk/core": "1.114.0",
+    "@serverless-stack/cli": "0.40.6",
+    "@serverless-stack/resources": "0.40.6",
+    "knex": "^0.21.17",
+    "objection": "^2.2.16",
+    "oso": "^0.21.0",
+    "pg": "^8.7.1"
+  }
+}
