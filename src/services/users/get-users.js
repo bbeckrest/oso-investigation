@@ -1,12 +1,11 @@
-import '../../objection';
-import { initOso } from '../../oso';
-import handler from '../../utils/handler';
-import { USERTYPE_ADMIN } from '../../constants/users';
+require('../../objection');
+const { initOso } = require('../../oso');
+const handler = require('../../utils/handler');
+const { USERTYPE_ADMIN } = require('../../constants/users');
 
 const User = require('../../models/User');
 
-// eslint-disable-next-line import/prefer-default-export
-export const main = handler(async (event) => {
+const main = handler(async (event) => {
   const oso = await initOso();
   await oso.authorize(new User(USERTYPE_ADMIN), 'view_all_users');
 
@@ -17,3 +16,7 @@ export const main = handler(async (event) => {
     // users: allUsers,
   };
 });
+
+module.exports = {
+  main,
+};

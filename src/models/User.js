@@ -1,6 +1,6 @@
-import { Model } from 'objection';
+const { Model } = require('objection');
 
-import { USERTYPE_ADMIN } from '../constants/users';
+const { USERTYPE_ADMIN } = require('../constants/users');
 
 module.exports = class User extends Model {
   #userType;

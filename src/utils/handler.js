@@ -1,4 +1,4 @@
-export default function handler(lambdaFn) {
+function handler(lambdaFn) {
   return async function runLambdaFn(event, context) {
     let body;
     let statusCode;
@@ -19,3 +19,5 @@ export default function handler(lambdaFn) {
     };
   };
 }
+
+module.exports = handler;

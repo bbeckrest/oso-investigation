@@ -1,5 +1,5 @@
-import path from 'path';
-import { Oso } from 'oso';
+const path = require('path');
+const { Oso } = require('oso');
 
 // import User from '../models/User'; // this works when class is exported as ES6
 const User = require('../models/User'); // this never works
@@ -8,7 +8,7 @@ let oso;
 let loadFilesPromise;
 
 // eslint-disable-next-line import/prefer-default-export
-export async function initOso() {
+async function initOso() {
   if (!oso) {
     oso = new Oso();
 
@@ -24,3 +24,7 @@ export async function initOso() {
 
   return oso;
 }
+
+module.exports = {
+  initOso,
+};

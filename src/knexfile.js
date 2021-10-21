@@ -1,4 +1,4 @@
-import postgresDialect from 'knex/lib/dialects/postgres';
+const postgresDialect = require('knex/lib/dialects/postgres');
 
 const config = {
   client: postgresDialect,
@@ -11,4 +11,4 @@ const config = {
   },
 };
 
-export default config;
+module.exports = config;
